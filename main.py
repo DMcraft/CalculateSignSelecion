@@ -140,7 +140,7 @@ if __name__ == '__main__':
     str_temp = clear_input(input('по умолчанию ({}): '.format(OPERATION)), ' +-*/#')
     if len(str_temp) > 0:
         operation_of_formula = split_operators(str_temp)
-    print('Введите рзультат выражения')
+    print('Введите результат выражения')
     str_temp = clear_input(input('по умолчанию ({}): '.format(NUMBER_RESULT)), '.1234567890')
     if isfloat(str_temp):
         formula_result = float(str_temp)
@@ -150,3 +150,5 @@ if __name__ == '__main__':
     print('Операторы участвующие в подборе:', ' '.join(operation_of_formula))
 
     calculate()
+
+    input('Завершить работу... (Enter)')
