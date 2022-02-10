@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 #----------------------------------------------------------------------------
 # Created By  : Dmitriy Aldunin @DMcraft
 # Created Date: 08/02/2022
@@ -33,9 +33,10 @@ class ProgressBar():
     def printbar(self, status: int):
         """Вывод информации о ходе выполнения процесса.
         
-        На вход подается информация о киличестве выполенных условных единиц. 
+        На вход подается информация о количестве выполненных условных единиц. 
 
         """
+        
         
         n_status = 20 
         procent_status = 100
@@ -45,14 +46,14 @@ class ProgressBar():
         if status < self.__status_full:
             n_status = int(20.0 / self.__status_full * status)
             procent_status = int(100.0 / self.__status_full * status)
-        print('#' * n_status, '-' * (20 - n_status), sep='>', end='')
+        print('\u2588' * n_status, '\u2581' * (20 - n_status), sep='\u2599', end='')
         print(f'] {procent_status:0>3}% ({status}/{self.__status_full}) [{time_todo:.1f}/{time_left:.1f} сек.]', end='\r')
         self.__time_print = time()
 
     def printifbar(self,status: int):
         """ Вывод информации о ходе выполнения процесса, не чаще определенного интервала времени  
 
-        На вход подается информация о киличестве выполенных условных единиц.  
+        На вход подается информация о количестве выполненных условных единиц.  
 
         """
 
